@@ -13,7 +13,7 @@ published: true
 
 > ![](/images/git-model@2x.png)
 > 
-> 引用元: [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+> 引用: [A successful Git branching model | nvie.com](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## 解決したい問題
 
