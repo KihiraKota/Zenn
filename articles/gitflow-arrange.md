@@ -7,7 +7,7 @@ published: true
 ---
 古いバージョンのバグ修正をリリースすることがあるプロジェクトの場合でも Git のブランチやタグが複雑にならないように、 Gitflow をアレンジして使っているブランチモデル(aka.ブランチ戦略)についての説明です。
 
-# Gitflow について
+## Gitflow について
 
 [Vincent Driessen](https://nvie.com/about/) 氏が [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) にて公開した Git のブランチモデルのことです。
 
@@ -15,7 +15,7 @@ published: true
 > 
 > 引用元: [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
-# 解決したい問題
+## 解決したい問題
 
 常に最新のバージョンだけをリリースするプロジェクトであれば Gitflow のブランチモデルで特に問題はないのですが、以下のようなことがある場合、
 
@@ -32,7 +32,7 @@ ver.1.1 を Gitflow のブランチモデルではどう扱うべきなのか、
 
 などの方法も考えられるかと思います。
 
-# 解決策
+## 解決策
 
 上記の問題を解決するために Gitflow をアレンジしたブランチモデルが以下のものです。
 
@@ -51,6 +51,6 @@ ver.1.1 を Gitflow のブランチモデルではどう扱うべきなのか、
 
 ※ __太字__ になっている箇所が Gitflow からアレンジした箇所です
 
-# 最後に
+## 最後に
 
 標準的な Gitflow ではなく、あくまでも Gitflow のアレンジ版だということに注意してください。
