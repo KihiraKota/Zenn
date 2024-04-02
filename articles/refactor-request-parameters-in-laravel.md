@@ -22,7 +22,7 @@ Laravelでそれなりに規模の大きいAPIの開発をしていると、リ�
 
 以下、例として「記事(=Article)」という `Model` に、「題名(=title)」と「本文(=body)」というプロパティがあるものとして話を進めます。
 
-Laravelの基礎的な機能だけを使って「記事」を作成するAPIを作成する場合、以下のようなコードになるかと思いす。
+Laravelの基礎的な機能だけを使って「記事」を作成するAPIを作成する場合、以下のようなコードになるかと思います。
 
 ```php:app/Http/Controllers/ArticleController.php
 /**
