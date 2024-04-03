@@ -32,7 +32,7 @@ https://web.archive.org/web/20240403154714/https://docs.github.com/en/get-starte
 ## GitLab Flow
 
 GitLabのドキュメント。
-ver.16.0で削除されてしまったようなので、ver.15.11のリンクです。
+ver.16.3で削除されてしまったようなので、ver.15.11のリンクです。
 
 https://archives.docs.gitlab.com/15.11/ee/topics/gitlab_flow.html#introduction-to-gitlab-flow
 
