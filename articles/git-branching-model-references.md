@@ -11,11 +11,11 @@ Gitの代表的なブランチモデル(aka.ブランチ戦略)の公式な資�
 
 ## git-flow
 
-Vincent Driessen 氏のブログ。
+Vincent Driessen氏のブログ。
 
 https://nvie.com/posts/a-successful-git-branching-model/
 
-魚拓
+魚拓。
 
 https://web.archive.org/web/20240403155003/https://nvie.com/posts/a-successful-git-branching-model/
 
@@ -25,7 +25,7 @@ GitHubのドキュメント。
 
 https://docs.github.com/en/get-started/using-github/github-flow
 
-魚拓
+魚拓。
 
 https://web.archive.org/web/20240403154714/https://docs.github.com/en/get-started/using-github/github-flow
 
@@ -36,6 +36,6 @@ ver.16.0で削除されてしまったようなので、ver.15.11のリンクで
 
 https://archives.docs.gitlab.com/15.11/ee/topics/gitlab_flow.html#introduction-to-gitlab-flow
 
-魚拓
+魚拓。
 
 https://web.archive.org/web/20240403153432/https://archives.docs.gitlab.com/15.11/ee/topics/gitlab_flow.html#introduction-to-gitlab-flow
