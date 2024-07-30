@@ -3,65 +3,64 @@ title: "Hexagonal, Onion, Clean Architectureの超ザックリとした要点"
 emoji: "🦝"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ]
-published: false
+published: true
 ---
+Hexagonal Architecture、Onion Architecture、Clean Architecture、これらのアーキテクチャーは基本的な考え方が共通しており、多少乱暴ですがどれも同じと言うことができますので、要点をまとめます。
 
+## 各アーキテクチャーについて
 
+### Hexagonal Architecture
 
-クリーンアーキテクチャから見たオニオンアーキテクチャ
+> ![](/images/Hexagonal-architecture-basic-1.gif)
+> 
+> 引用: [Hexagonal architecture | Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 
-Hexagonal Architectureの
+2005年にAlistair Cockburn氏が公開したアーキテクチャーです。
 
-Hexagonal Architecture
-Onion Architecture
-Clean Architecture
+https://alistair.cockburn.us/hexagonal-architecture/
 
-Aから見たBとC
-B and C as seen from A
+### Onion Architecture
 
+> ![](/images/image257b0257d255b59255d.png)
+> 
+> 引用: [The Onion Architecture : part 1 | Programming with Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
 
----
+2008年に[Jeffrey Palermo](https://jeffreypalermo.com/about/)氏が公開したアーキテクチャーです。
 
-ヘキサゴナルアーキテクチャ 別名:ポートアンドアダプターアーキテクチャ
+https://jeffreypalermo.com/tag/onion-architecture/
 
-原文 https://alistair.cockburn.us/hexagonal-architecture/
-日本語訳 https://blog.tai2.net/hexagonal_architexture.html
+### Clean Architecture
 
-![](/images/Hexagonal-architecture-basic-1.gif)
+> ![](/images/CleanArchitecture.jpg)
+> 
+> 引用: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
-内
-アプリケーション
-ポート
-アダプター (GUI)
-外
+2012年に[Robert C. Martin](http://cleancoder.com/files/about.md)氏が公開したアーキテクチャーです。
+Hexagonal Architecture、Onion Architectureなどを参考にしています。
 
-オニオンアーキテクチャ
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
-原文 https://jeffreypalermo.com/tag/onion-architecture/
+## 要点
 
-![](/images/image257b0257d255b59255d.png)
+### 何ができるようにしたいのか？
 
+まず、これらのアーキテクチャーによって何ができるようにしたいのかというと、 __外部の要素に依存せずに実行やテストができるようにしたい__ 、ということになります。
 
-内
-Domain Model
-Domain Services (リポジトリインターフェイス)
-Application Services
-※↑アプリケーションコア
-User Interfaces(コントローラー), Infrastructure, Tests
-外
+ここでいう外部の要素というのは、UIやフレームワーク、DB、Webサーバーなどのことで、例えばUIであればGUIからCUIに、DBであればMySQLからPostgreSQLに、といった具合に、置き換えが可能な要素、もしくは置き換わることがあり得る要素のことです。
 
-クリーンアーキテクチャ
+### そのために何をするのか？
 
-原文 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
-日本語訳 https://blog.tai2.net/the_clean_architecture.html
+そしてそのために何をするのかというと、
 
-![](/images/CleanArchitecture.jpg)
+1. システムの最も内側に、外部の要素には依存しないビジネスルール用のレイヤーを作る
+1. ビジネスルール用のレイヤーの外側に、外部の要素とビジネスルール用のレイヤーを仲介するインターフェイス用のレイヤーを作る
 
-内
-エンタープライズビジネスルール (エンティティ)
-アプリケーションビジネスルール (ユースケース)
-インターフェイスアダプター (Controllers, Gateways, Presenters)
-フレームワーク&ドライバー (Devices, Web, DB, External Interfaces, UI)
-外
+これら２つのレイヤーを作っておくことで、外部の要素が何に置き換わったとしても、ビジネスルール用のレイヤーには何も変更を加えることなく、実行やテストができるようにします。
+
+## 各アーキテクチャーの整理
+
+上記の要点を踏まえて各アーキテクチャーの図や用語を整理すると、以下のようになります。
 
 ![](/images/comparison-hexagonal-onion-clean.jpg)
+
+繰り返しになりますが、これらのアーキテクチャーの基本的な考え方は共通しており、Onion ArchitectureやClean Architectureは、Hexagonal Architectureのバリエーションの１つとも言えますので、それぞれのアーキテクチャーは別のものと捉えるのではなく、本質的には同じものだと捉えた方が良いと思っています。
