@@ -15,7 +15,7 @@ published: false
 
 極めて小規模なアプリケーションであればまだ何とか修正できるかもしれませんが、ある程度の規模となれば、もうどこに何が書かれているのか調べるだけでも大変です。
 
-![](/images/layers-ui-domain-infra1.png)
+![無秩序なソースコード](/images/layers-ui-domain-infra1.png)
 
 このような「カオス（無秩序）」な状態から、「○○をするコードはこっち」「××をするコードはあっち」というグループ分けをして、必要な時に必要なところだけを修正できるようにする。これがアプリケーションアーキテクチャのスタート地点です。
 
@@ -30,7 +30,7 @@ published: false
 ではまず何と何のグループ分けをするのか、という話になりますが、アプリケーションには必ず、それを利用する「利用者」が存在します。
 この「利用者」とのやり取りをするためのコードと、それ以外のコードを分離します。
 
-![](/images/layers-ui-domain-infra2.png)
+![UI層とそれ以外の分離](/images/layers-ui-domain-infra2.png)
 
 「利用者」とのやり取りをするためのコードのグループ、これが **「UI層」** です。
 それ以外のコードのグループは、「利用者」には分からないアプリケーションの内部処理となるので、「内部処理層(仮)」としています。
@@ -56,7 +56,7 @@ published: false
 
 この「永続化」は多くのアプリケーションで必要になり、かつアプリケーションの外にあるものを利用する必要がある処理なので、分離します。
 
-![](/images/layers-ui-domain-infra3.png)
+![永続化とそれ以外の分離](/images/layers-ui-domain-infra3.png)
 
 「永続化」をするためのコードのグループを、「永続化層(仮)」としています。
 
@@ -80,7 +80,7 @@ published: false
 
 アプリケーションアーキテクチャの世界で言う「依存関係」というのは、「○○は××があることを知っている」という関係のことです。
 
-![](/images/layers-ui-domain-infra4.png)
+![依存関係の追加](/images/layers-ui-domain-infra4.png)
 
 上の層から下の層へと「依存関係」のルールを追加することで、以下のようになります。
 
@@ -105,7 +105,7 @@ published: false
 
 ### ４つのレイヤー
 
-![](/images/layers-ui-domain-infra5.png)
+![DDDの４つのレイヤー](/images/layers-ui-domain-infra5.png)
 
 「ドメイン駆動設計」では、アプリケーションを以下の４つのレイヤーに分離しています。
 
@@ -126,7 +126,7 @@ published: false
 
 これは特定の技術に依存せずにアプリケーションを設計できるようにするためのもので、例えば「User」のデータの保存先を「MySQL」から「PostgreSQL」に切り替える必要があるとき、これまでの「ドメイン層」が「インフラ層」に依存している設計では、「インフラ層」に合わせて「ドメイン層」も変更する必要があります。
 
-![](/images/layers-ui-domain-infra6.png)
+![ドメイン層とインフラ層の依存関係の逆転](/images/layers-ui-domain-infra6.png)
 
 「ドメイン駆動設計」ではこのような場合、「ドメイン層」に「UserRepository」という「User」を **何らかの方法で保存する** というインターフェイスを用意し、「インフラ層」で「MySQL」で保存する「MySQL版UserRepository」や「PostgreSQL」で保存する「PostgreSQL版UserRepository」といった実装クラスを作成する、という形にします。
 
@@ -137,7 +137,7 @@ published: false
 最後に、2026年現在のモダンなアプリケーションアーキテクチャで、「ドメイン駆動設計」の思想がどのように取り入れられているのかを見ていきます。
 ここでは一例として、「クリーンアーキテクチャ」を取り上げます。
 
-> ![](/images/CleanArchitecture.jpg)
+> ![The Clean Architecture](/images/CleanArchitecture.jpg)
 > 
 > 出典: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
@@ -145,7 +145,7 @@ published: false
 
 ### レイヤーの対応付け
 
-![](/images/layers-ui-domain-infra7.png)
+![レイヤーの対応付け](/images/layers-ui-domain-infra7.png)
 
 「ドメイン駆動設計」のレイヤーと「クリーンアーキテクチャ」のレイヤーを対応付けると、以下のようになります。
 
@@ -156,13 +156,13 @@ published: false
 
 一つここで注意が必要なのが、「クリーンアーキテクチャ」の「Frameworks & Drivers」から円の内側に向かっている線は、「○○は××があることを知っている」という「依存」の関係の線ではなく、「○○は××とつながっている」という「接続」の関係の線だということです。「Frameworks & Drivers」に含まれるのは、フレームワーク、ドライバー、データベースといったものになるので、それ以外のレイヤーのことを知っている、ということはありえません。
 
-![](/images/layers-ui-domain-infra8.png)
+![特定の技術に依存しないレイヤー](/images/layers-ui-domain-infra8.png)
 
 「Interface Adapters」は「Frameworks & Drivers」があることを知っている、ということに関係になり、「クリーンアーキテクチャ」でも「Application Business Rules」よりも内側は特定の技術に依存しないようにする、という「ドメイン駆動設計」の思想が取り入れられています。
 
 ### レイヤーの整理
 
-![](/images/layers-ui-domain-infra9.png)
+![レイヤーの整理](/images/layers-ui-domain-infra9.png)
 
 また、この **「Application Business Rules」よりも内側は特定の技術に依存しないようにする** 、という「クリーンアーキテクチャ」の設計と、 **「ドメイン層」は特定の技術に依存しないようにする** 、という「ドメイン駆動設計」の設計を合わせると、以下の三層にまとめることができます。
 
@@ -199,7 +199,7 @@ published: false
 
 ## おまけ
 
-![](/images/app-ride-architecture1.png)
+![App-Ride Architecture](/images/app-ride-architecture1.png)
 
 上の図は、私がアプリケーションを開発する際に採用しているアーキテクチャの概念図です。
 今回の記事を作成するにあたって、 **「App-Ride Architecture (アプライドアーキテクチャ)」** と名付けました。
@@ -207,3 +207,11 @@ published: false
 これまで解説してきた内容をほぼそのまま反映していますが、実際の開発で使いやすいように、１つだけルールを追加しています。
 
 こちらについてもいずれ記事を作成する予定です。
+
+## 参考書籍・参考資料
+
+* [エンタープライズアプリケーションアーキテクチャパターン](https://www.shoeisha.co.jp/book/detail/9784798105536) (Martin Fowler, 2002)
+* [エリック・エヴァンスのドメイン駆動設計](https://www.shoeisha.co.jp/book/detail/9784798121963) (Eric Evans, 2003)
+* [The Hexagonal (Ports & Adapters) Architecture](https://alistair.cockburn.us/hexagonal-architecture/) (Alistair Cockburn, 2005)
+* [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/) (Jeffrey Palermo, 2008)
+* [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) (Robert C. Martin, 2012)
