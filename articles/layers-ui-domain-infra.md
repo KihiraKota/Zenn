@@ -99,7 +99,7 @@ published: false
 
 ## 現代アーキテクチャの基礎「ドメイン駆動設計」
 
-**「ドメイン駆動設計（Domain-Driven Design / DDD）」** は、2003年にエリック・エヴァンス氏が提唱した設計思想です。
+**「ドメイン駆動設計（Domain-Driven Design / DDD）」** は、2003年にEric Evans氏が提唱した設計思想です。
 
 2026年現在、モダンなアプリケーションアーキテクチャの多くはこの「ドメイン駆動設計」の思想をベースにしています。
 
@@ -132,3 +132,48 @@ published: false
 
 このようにすることで、「ドメイン層」が「インフラ層」を知っているのではなく、「インフラ層」が「ドメイン層」を知っている、というこれまでの依存関係を逆転させた構造にしているのです。
 
+## ドメイン駆動設計で見る「クリーンアーキテクチャ」
+
+最後に、2026年現在のモダンなアプリケーションアーキテクチャで、「ドメイン駆動設計」の思想がどのように取り入れられているのかを見ていきます。
+ここでは一例として、「クリーンアーキテクチャ」を取り上げます。
+
+> ![](/images/CleanArchitecture.jpg)
+> 
+> 出典: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+「クリーンアーキテクチャ」は、2012年に[Robert C. Martin](http://cleancoder.com/files/about.md)氏が公開したアーキテクチャです。
+
+### レイヤーの対応付け
+
+![](/images/layers-ui-domain-infra7.png)
+
+「ドメイン駆動設計」のレイヤーと「クリーンアーキテクチャ」のレイヤーを対応付けると、以下のようになります。
+
+- **UI層:** Interface Adapters
+- **アプリケーション層:** Application Business Rules
+- **ドメイン層:** Enterprise Business Rules
+- **インフラ層:** Interface Adapters
+
+一つここで注意が必要なのが、「クリーンアーキテクチャ」の「Frameworks & Drivers」から円の内側に向かっている線は、「○○は××があることを知っている」という「依存」の関係の線ではなく、「○○は××とつながっている」という「接続」の関係の線だということです。「Frameworks & Drivers」に含まれるのは、フレームワーク、ドライバー、データベースといったものになるので、それ以外のレイヤーのことを知っている、ということはありえません。
+
+![](/images/layers-ui-domain-infra8.png)
+
+「Interface Adapters」は「Frameworks & Drivers」があることを知っている、ということに関係になり、「クリーンアーキテクチャ」でも「Application Business Rules」よりも内側は特定の技術に依存しないようにする、という「ドメイン駆動設計」の思想が取り入れられています。
+
+### レイヤーの整理
+
+![](/images/layers-ui-domain-infra9.png)
+
+また、この **「Application Business Rules」よりも内側は特定の技術に依存しないようにする** 、という「クリーンアーキテクチャ」の設計と、 **「ドメイン層」は特定の技術に依存しないようにする** 、という「ドメイン駆動設計」の設計を合わせると、以下の三層にまとめることができます。
+
+- **UI層**
+- **ドメイン層(+アプリケーション層)**
+- **インフラ層**
+
+## まとめ
+
+todo 三層の役割、依存のルール
+
+## おまけ
+
+todo App-Ride Architectureの図と、別で記事を書く、という予告をする
