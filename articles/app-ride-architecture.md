@@ -2,10 +2,24 @@
 title: "App-Ride Architecture (アプライドアーキテクチャ)"
 emoji: "🦝"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [ソフトウェアアーキテクチャ, レイヤードアーキテクチャ, ドメイン駆動設計, クリーンアーキテクチャ]
+topics: [アプリケーションアーキテクチャ, ドメイン駆動設計, ソフトウェアアーキテクチャ]
 published: false
 ---
-![](/images/app-ride-architecture1.png)
+![App-Ride Architecture](/images/app-ride-architecture1.png)
+
+上の図は、私がアプリケーションを開発する際に採用しているアーキテクチャの概念図です。
+
+アプリケーションが外部ライブラリを乗りこなす (App-Ride) 実践的な (Applied) アーキテクチャ、という意味を込めて、 **「App-Ride Architecture (アプライドアーキテクチャ)」** と名付けました。
+
+ドメイン駆動設計の思想をベースに、下記の記事の内容をほぼそのまま反映したものになりますが、１つだけ **「戦略的な依存」** というルールを追加しています。
+
+https://zenn.dev/kihirakota/articles/layers-ui-domain-infra
+
+## ドメイン駆動設計の理想と現実
+
+todo ドメイン層が特定の技術に依存しないようにするのが理想だが、現実問題としてそれには多大な労力がかかる、というようなことを書く。
+
+
 
 ## 概要
 
