@@ -1,6 +1,6 @@
 ---
 title: "リリース前テストがある場合のなるべく綺麗で手間がかからないバージョン番号の付け方"
-emoji: "🦝"
+emoji: "🏷️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [semanticversioning]
 published: true

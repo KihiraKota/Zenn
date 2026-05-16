@@ -1,6 +1,6 @@
 ---
 title: "PhpStormを使用中にホストの9000番ポートのポートマッピング設定があるDockerコンテナを立ち上げるとエラーになる"
-emoji: "🦝"
+emoji: "🐳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [phpstorm, docker]
 published: true

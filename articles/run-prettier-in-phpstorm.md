@@ -1,6 +1,6 @@
 ---
 title: "PhpStormでPrettierのコードフォーマットを実行する"
-emoji: "🦝"
+emoji: "💄"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [phpstorm, prettier]
 published: true

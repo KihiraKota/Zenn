@@ -1,6 +1,6 @@
 ---
 title: "「なんちゃってクリーンアーキテクチャ」を基にしたLaravelでの開発方針"
-emoji: "🦝"
+emoji: "🧭"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [laravel]
 published: true

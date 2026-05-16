@@ -1,6 +1,6 @@
 ---
 title: "PhpStormでDockerコンテナのPHPを使ってLaravel Pintのコードフォーマットを実行する"
-emoji: "🦝"
+emoji: "🎨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [phpstorm, laravelpint]
 published: true

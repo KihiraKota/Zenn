@@ -1,6 +1,6 @@
 ---
 title: "古いバージョンのバグ修正をリリースすることがある場合のGitflowのアレンジ"
-emoji: "🦝"
+emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [git, gitflow]
 published: true

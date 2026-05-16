@@ -1,6 +1,6 @@
 ---
 title: "Gitの代表的なブランチモデルの公式資料集"
-emoji: "🦝"
+emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [git, gitflow, githubflow, gitlabflow]
 published: true

@@ -1,6 +1,6 @@
 ---
 title: "「LaravelのModel」＝「モデル」ではない、という話"
-emoji: "🦝"
+emoji: "📖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [laravel]
 published: true

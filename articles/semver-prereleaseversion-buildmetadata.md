@@ -1,6 +1,6 @@
 ---
 title: "Semantic Versioningのプレリリースバージョン、ビルドメタデータ"
-emoji: "🦝"
+emoji: "🔢"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [semanticversioning]
 published: true

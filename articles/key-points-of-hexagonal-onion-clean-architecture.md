@@ -1,6 +1,6 @@
 ---
 title: "Hexagonal, Onion, Clean Architectureの超ザックリとした要点"
-emoji: "🦝"
+emoji: "🎯"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ]
 published: true
