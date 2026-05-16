@@ -1,5 +1,5 @@
 ---
-title: "「綺麗だけど完成しない」にサヨナラ。作ることを最優先にする設計指針『App-Ride Architecture』"
+title: "「完璧だけど完成しない」にサヨウナラ。作ることを最優先にする設計指針『App-Ride Architecture』"
 emoji: "🏇"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [アプリケーションアーキテクチャ, ドメイン駆動設計, ソフトウェアアーキテクチャ]
