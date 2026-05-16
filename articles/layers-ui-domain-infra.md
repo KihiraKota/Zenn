@@ -210,6 +210,11 @@ published: true
 
 こちらについても、いずれ記事を作成する予定です。
 
+**追記(2026/05/16):**
+「App-Ride Architecture」についての記事を公開しました。
+
+https://zenn.dev/kihirakota/articles/app-ride-architecture
+
 ## 参考書籍・参考資料
 
 * [エンタープライズアプリケーションアーキテクチャパターン](https://www.shoeisha.co.jp/book/detail/9784798105536) (Martin Fowler, 2002)
