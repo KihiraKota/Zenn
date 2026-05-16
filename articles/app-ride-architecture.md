@@ -3,7 +3,7 @@ title: "「綺麗だけど完成しない」にサヨナラ。作ることを最
 emoji: "🦝"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [アプリケーションアーキテクチャ, ドメイン駆動設計, ソフトウェアアーキテクチャ]
-published: false
+published: true
 ---
 ![App-Ride Architecture](/images/app-ride-architecture1.png)
 
