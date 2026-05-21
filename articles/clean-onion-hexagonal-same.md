@@ -5,3 +5,8 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ]
 published: false
 ---
+
+ヘキサゴナルアーキテクチャ
+
+(driving) Adapter
+(driven) Adapter
