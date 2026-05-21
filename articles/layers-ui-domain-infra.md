@@ -137,7 +137,7 @@ published: true
 次に、2026年現在のモダンなアプリケーションアーキテクチャで、「ドメイン駆動設計」の思想がどのように取り入れられているのかを見ていきます。
 ここでは一例として、「クリーンアーキテクチャ」を取り上げます。
 
-> ![The Clean Architecture](/images/CleanArchitecture.jpg)
+> ![The Clean Architecture](/images/ref-CleanArchitecture.jpg)
 > 
 > 出典: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 

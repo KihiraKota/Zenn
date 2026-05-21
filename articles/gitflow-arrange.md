@@ -1,29 +1,29 @@
 ---
-title: "古いバージョンのバグ修正をリリースすることがある場合のGitflowのアレンジ"
+title: "古いバージョンのバグ修正をリリースすることがある場合のgit-flowのアレンジ"
 emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [git, gitflow]
 published: true
 ---
-古いバージョンのバグ修正をリリースすることがあるプロジェクトの場合でも Git のブランチやタグが複雑にならないように、 Gitflow をアレンジして使っているブランチモデル(aka.ブランチ戦略)についての説明です。
+古いバージョンのバグ修正をリリースすることがあるプロジェクトの場合でも Git のブランチやタグが複雑にならないように、 git-flow をアレンジして使っているブランチモデル(aka.ブランチ戦略)についての説明です。
 
-## Gitflow について
+## git-flow について
 
 [Vincent Driessen](https://nvie.com/about/) 氏が [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) にて公開した Git のブランチモデルのことです。
 
-> ![](/images/git-model@2x.png)
+> ![](/images/ref-GitFlow.png)
 > 
 > 引用: [A successful Git branching model | nvie.com](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## 解決したい問題
 
-常に最新のバージョンだけをリリースするプロジェクトであれば Gitflow のブランチモデルで特に問題はないのですが、以下のようなことがある場合、
+常に最新のバージョンだけをリリースするプロジェクトであれば git-flow のブランチモデルで特に問題はないのですが、以下のようなことがある場合、
 
 1. ver.1.0 をリリース
 1. ver.2.0 をリリース
 1. ver.1.0 でバグが見つかり、バグ修正版の ver.1.1 をリリースする必要がある
 
-ver.1.1 を Gitflow のブランチモデルではどう扱うべきなのか、人によって意見が分かれるかと思います。
+ver.1.1 を git-flow のブランチモデルではどう扱うべきなのか、人によって意見が分かれるかと思います。
 
 例えば、
 
@@ -34,7 +34,7 @@ ver.1.1 を Gitflow のブランチモデルではどう扱うべきなのか、
 
 ## 解決策
 
-上記の問題を解決するために Gitflow をアレンジしたブランチモデルが以下のものです。
+上記の問題を解決するために git-flow をアレンジしたブランチモデルが以下のものです。
 
 ![](/images/Gitflow-arrange.jpg)
 
@@ -49,8 +49,8 @@ ver.1.1 を Gitflow のブランチモデルではどう扱うべきなのか、
 1. __古いバージョンのバグ修正のリリース完了後、release/1.x ブランチを release/2.x ブランチにマージする__
 1. 5～6 と同様の作業を release/2.x ブランチで進める
 
-※ __太字__ になっている箇所が Gitflow からアレンジした箇所です
+※ __太字__ になっている箇所が git-flow からアレンジした箇所です
 
 ## 最後に
 
-標準的な Gitflow ではなく、あくまでも Gitflow のアレンジ版だということに注意してください。
+標準的な git-flow ではなく、あくまでも git-flow のアレンジ版だということに注意してください。

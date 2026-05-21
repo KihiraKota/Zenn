@@ -11,7 +11,7 @@ Hexagonal Architecture、Onion Architecture、Clean Architecture、これらの�
 
 ### Hexagonal Architecture
 
-> ![](/images/Hexagonal-architecture-basic-1.gif)
+> ![](/images/ref-HexagonalArchitecture.gif)
 > 
 > 引用: [Hexagonal architecture | Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 
@@ -21,7 +21,7 @@ https://alistair.cockburn.us/hexagonal-architecture/
 
 ### Onion Architecture
 
-> ![](/images/image257b0257d255b59255d.png)
+> ![](/images/ref-OnionArchitecture.png)
 > 
 > 引用: [The Onion Architecture : part 1 | Programming with Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
 
@@ -31,7 +31,7 @@ https://jeffreypalermo.com/tag/onion-architecture/
 
 ### Clean Architecture
 
-> ![](/images/CleanArchitecture.jpg)
+> ![](/images/ref-CleanArchitecture.jpg)
 > 
 > 引用: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
