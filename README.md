@@ -3,7 +3,7 @@
 ## コマンド
 
 ```bash
-$ npx zenn preview
+npx zenn preview
 ```
 
 ## 資料

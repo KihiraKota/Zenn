@@ -1,17 +1,17 @@
 ---
 title: "クリーンアーキテクチャとオニオンとヘキサゴナルの違い？残念だがそんなものは無い！"
-emoji: "👏"
+emoji: "👏" # todo 絵文字の選定
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ]
+topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ, アプリケーションアーキテクチャ, ソフトウェアアーキテクチャ]
 published: false
 ---
-![](/images/clean-onion-hexagonal-same.png)
+![ヘキサゴナル、オニオン、クリーンの要点](/images/clean-onion-hexagonal-same.png)
 
 ## 要点
 
 ## ヘキサゴナルアーキテクチャ
 
-> ![](/images/ref-HexagonalArchitecture.gif)
+> ![ヘキサゴナルアーキテクチャ](/images/ref-HexagonalArchitecture.gif)
 > 
 > 出典: [The Hexagonal (Ports & Adapters) Architecture | Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 
@@ -24,7 +24,7 @@ https://alistair.cockburn.us/hexagonal-architecture/
 
 ## オニオンアーキテクチャ
 
-> ![](/images/ref-OnionArchitecture.png)
+> ![オニオンアーキテクチャ](/images/ref-OnionArchitecture.png)
 > 
 > 出典: [The Onion Architecture : part 1 | Programming with Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
 
@@ -34,7 +34,7 @@ https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
 
 ## クリーンアーキテクチャ
 
-> ![](/images/ref-CleanArchitecture.jpg)
+> ![クリーンアーキテクチャ](/images/ref-CleanArchitecture.jpg)
 > 
 > 出典: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
