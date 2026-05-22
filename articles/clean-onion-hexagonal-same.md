@@ -5,7 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ, アプリケーションアーキテクチャ, ソフトウェアアーキテクチャ]
 published: false
 ---
-![ヘキサゴナル、オニオン、クリーンの要点](/images/clean-onion-hexagonal-same.png)
+![ヘキサゴナル、オニオン、クリーンの要点](/images/clean-onion-hexagonal-same1.png)
 
 ## 要点
 
