@@ -72,14 +72,29 @@ published: false
 > 
 > 出典: [The Hexagonal (Ports & Adapters) Architecture | Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 
-todo 要点との対応
+#### ドメイン層
 
-2005年に[Alistair Cockburn](https://alistaircockburn.com/Bio)氏が公開したアーキテクチャです。
+中央にある「Application」がドメイン層にあたります。
 
-https://alistair.cockburn.us/hexagonal-architecture/
+#### UI層
 
-(driving) Adapter
-(driven) Adapter
+「Application」の左側にある「Adapter」がUI層にあたります。
+
+図には反映されていませんが、[原文](https://alistair.cockburn.us/hexagonal-architecture/)の中では、
+
+> *driving* adapters
+
+とも表現されていて、「○○がアプリケーションを動かすためのアダプター」という意味になっています。
+
+#### インフラ層
+
+「Application」の右側にある「Adapter」がインフラ層にあたります。
+
+図には反映されていませんが、こちらも[原文](https://alistair.cockburn.us/hexagonal-architecture/)の中では、
+
+> *driven* adapters
+
+とも表現されていて、「アプリケーションが○○を動かすためのアダプター」という意味になっています。
 
 ### オニオンアーキテクチャ
 
@@ -87,11 +102,25 @@ https://alistair.cockburn.us/hexagonal-architecture/
 > 
 > 出典: [The Onion Architecture : part 1 | Programming with Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
 
-todo 要点との対応
+#### ドメイン層
 
-2008年に[Jeffrey Palermo](https://jeffreypalermo.com/about/)氏が公開したアーキテクチャです。
+中央にある「Application Core」がドメイン層にあたります。
 
-https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
+また、「Application Core」の中が更に細かくレイヤー分けされていて、以下のような依存関係になっています。
+
+- **Application Services** : Domain Services と Domain Model に依存する
+- **Domain Services** : Domain Modelに依存する
+- **Domain Model** : 何にも依存しない
+
+#### UI層
+
+円の一番外側の上にある「User Interface」がUI層にあたります。そのままですね。
+
+#### インフラ層
+
+円の一番外側の右下にある「Infrastructure」がインフラ層にあたります。こちらもそのままです。
+
+「Infrastructure」から出ている矢印の先にある「Web Interface」「File」「DB」といったものが、まさに「アプリケーションが利用するもの」です。
 
 ### クリーンアーキテクチャ
 
