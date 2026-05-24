@@ -34,7 +34,7 @@ published: false
 ここでいう外部の要素というのは、アプリケーションを利用するユーザーや、アプリケーションがデータを保存するためのデータベース、アプリケーションが土台にしているフレームワークなどのことです。
 
 ユーザーがこれまでGUIで直接操作していたものを自動化するためにCUIでも操作できるようにする。データベースをMySQLからPostgreSQLに切り替える。フレームワークをCakePHPからLaravelに移行する。
-このような置き換えをする場合に、アプリケーションに大きな変更をしなくても対応ができる構造として考えられたのが、これら3つのアーキテクチャです。
+このような置き換えをする場合に、アプリケーションに大きな変更をしなくても対応ができるように考えられたのが、これら3つのアーキテクチャです。
 
 - **外部の要素**
     - **アプリケーションを利用するもの** 例:ユーザー、外部システム
@@ -43,24 +43,36 @@ published: false
 
 ### そのために何をするのか？
 
-todo 続きはここから。以下、メモ。
+3つのアーキテクチャは、以下のようにすることで、上記の問題を解決しています。
 
-そしてそのために何をするのかというと、
+1. アプリケーションの中心に、外部の要素には一切依存しないレイヤーを作る
+2. 1.のレイヤーと外部の要素を仲介するレイヤーを作る
 
-1. システムの最も内側に、外部の要素には依存しないビジネスルール用のレイヤーを作る
-2. ビジネスルール用のレイヤーの外側に、外部の要素とビジネスルール用のレイヤーを仲介するインターフェイス用のレイヤーを作る
+このようなレイヤーの構造にすることで、外部の要素を別のものに置き換える場合でも、1.のレイヤーには大きな変更をしなくても良いようにしているのです。
 
-これら２つのレイヤーを作っておくことで、外部の要素が何に置き換わったとしても、ビジネスルール用のレイヤーには何も変更を加えることなく、実行やテストができるようにします。
+上の図の要点では、1.のレイヤーのことを **「ドメイン層」** 、2.のレイヤーを役割別に、「アプリケーションを利用するもの」との仲介をするレイヤーを **「UI層」** 、「アプリケーションが利用するもの」との仲介をするレイヤーを **「インフラ層」** としています。
+
+- **ドメイン層**
+    - 役割: 外部の要素が別のものに置き換わっても変わらない、アプリケーションの本質的な処理を実行する。
+    - 依存関係: 外部の要素には一切依存しない
+- **UI層**
+    - 役割: 「ドメイン層」と「アプリケーションを利用するもの」を仲介する。
+    - 依存関係: 「ドメイン層」と「外部ライブラリ」に依存する。
+- **インフラ層**
+    - 役割: 「ドメイン層」と「アプリケーションが利用するもの」を仲介する。
+    - 依存関係: 「ドメイン層」と「外部ライブラリ」、「アプリケーションが利用するもの」に依存する。
 
 ## 要点との対応
 
-それではここからは、上記の要点が3つのアーキテクチャにそれぞれどう対応しているのかを見ていきます。
+それではここからは、上記の要点とそれぞれのアーキテクチャがどう対応しているのかを見ていきます。
 
 ### ヘキサゴナルアーキテクチャ
 
 > ![ヘキサゴナルアーキテクチャ](/images/ref-HexagonalArchitecture.gif)
 > 
 > 出典: [The Hexagonal (Ports & Adapters) Architecture | Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
+
+todo 要点との対応
 
 2005年に[Alistair Cockburn](https://alistaircockburn.com/Bio)氏が公開したアーキテクチャです。
 
@@ -75,6 +87,8 @@ https://alistair.cockburn.us/hexagonal-architecture/
 > 
 > 出典: [The Onion Architecture : part 1 | Programming with Palermo](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
 
+todo 要点との対応
+
 2008年に[Jeffrey Palermo](https://jeffreypalermo.com/about/)氏が公開したアーキテクチャです。
 
 https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
@@ -84,6 +98,9 @@ https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
 > ![クリーンアーキテクチャ](/images/ref-CleanArchitecture.jpg)
 > 
 > 出典: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+todo 図の依存関係についての説明
+todo 要点との対応
 
 2012年に[Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin)氏が公開したアーキテクチャです。
 
@@ -96,8 +113,6 @@ https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 todo ぶっちゃけDDDだよね。
 
 ## 参考書籍・参考資料
-
-todo 人のリンク貼る？
 
 * [エンタープライズアプリケーションアーキテクチャパターン](https://www.shoeisha.co.jp/book/detail/9784798105536) (Martin Fowler, 2002)
 * [エリック・エヴァンスのドメイン駆動設計](https://www.shoeisha.co.jp/book/detail/9784798121963) (Eric Evans, 2003)
