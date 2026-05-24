@@ -5,6 +5,8 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [アプリケーションアーキテクチャ, ドメイン駆動設計, ソフトウェアアーキテクチャ]
 published: true
 ---
+## はじめに
+
 ![App-Ride Architecture](/images/app-ride-architecture1.png)
 
 上の図は、私がアプリケーションを開発する際に採用しているアーキテクチャの概念図です。
