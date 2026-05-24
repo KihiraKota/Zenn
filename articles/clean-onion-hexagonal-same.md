@@ -50,7 +50,7 @@ published: false
 
 このようなレイヤーの構造にすることで、外部の要素を別のものに置き換える場合でも、1.のレイヤーには大きな変更をしなくても良いようにしているのです。
 
-上の図の要点では、1.のレイヤーのことを **「ドメイン層」** 、2.のレイヤーを役割別に、「アプリケーションを利用するもの」との仲介をするレイヤーを **「UI層」** 、「アプリケーションが利用するもの」との仲介をするレイヤーを **「インフラ層」** としています。
+上の図の要点では、1.のレイヤーのことを **「ドメイン層」** 、2.のレイヤーを役割別にし、「アプリケーションを利用するもの」との仲介をするレイヤーを **「UI層」** 、「アプリケーションが利用するもの」との仲介をするレイヤーを **「インフラ層」** としています。
 
 - **ドメイン層**
     - 役割: 外部の要素が別のものに置き換わっても変わらない、アプリケーションの本質的な処理を実行する。
@@ -84,7 +84,7 @@ published: false
 
 > *driving* adapters
 
-とも表現されていて、「○○がアプリケーションを動かすためのアダプター」という意味になっています。
+とも表現されていて、「○○がApplicationを動かすためのアダプター」という意味になっています。
 
 #### インフラ層
 
@@ -94,7 +94,7 @@ published: false
 
 > *driven* adapters
 
-とも表現されていて、「アプリケーションが○○を動かすためのアダプター」という意味になっています。
+とも表現されていて、「Applicationが○○を動かすためのアダプター」という意味になっています。
 
 ### オニオンアーキテクチャ
 
@@ -106,7 +106,7 @@ published: false
 
 中央にある「Application Core」がドメイン層にあたります。
 
-また、「Application Core」の中が更に細かくレイヤー分けされていて、以下のような依存関係になっています。
+「Application Core」の中が更に細かくレイヤー分けされていて、以下のような依存関係になっていますが、「Application Core」がドメイン層にあたる、ということは変わりません。
 
 - **Application Services** : Domain Services と Domain Model に依存する
 - **Domain Services** : Domain Modelに依存する
@@ -128,14 +128,57 @@ published: false
 > 
 > 出典: [The Clean Architecture | The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
-todo 図の依存関係についての説明
-todo 要点との対応
+:::message
+クリーンアーキテクチャの図を見る上での注意点
+:::
 
-2012年に[Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin)氏が公開したアーキテクチャです。
+ここで一つ注意が必要なのが、青色の「Frameworks & Drivers」です。
 
-https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+ヘキサゴナルの図の六角形や、オニオンの図の円と同様に、全体を囲う大きな枠の中に入っている要素なので、これもアプリケーションの一部のように見えますが、 **「Frameworks & Drivers」はアプリケーションの一部ではなく、「外部の要素」にあたります。**
 
-## ドメイン駆動設計 todo 見出しを考える
+[原文](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)の「Frameworks and Drivers」のセクションでも、
+
+> The outermost layer is generally composed of frameworks and tools such as the Database, the Web Framework, etc.
+> 
+> 訳: 一番外側の層は、通常、データベースやWebフレームワークなどのフレームワークやツールによって構成される。
+
+> This layer is where all the details go. The Web is a detail. The database is a detail. We keep these things on the outside where they can do little harm.
+> 
+> 訳: この層は、すべての「詳細」が配置される場所である。Webは詳細である。データベースは詳細である。私たちは、これらの要素が内側の円に害を及ぼさないよう、ここに隔離しておく。
+
+とあるように、「Frameworks & Drivers」は「外部の要素」です。
+
+だとしたら「Frameworks & Drivers」から円の内側に向かっている矢印はどうなるんだ？ということになるのですが、この矢印は「○○は××があることを知っている」という「依存」の関係の矢印ではなく、「○○は××とつながっている」という「接続」の関係の矢印だと捉えるのが自然です。
+「Frameworks & Drivers」を「外部の要素」としている以上、「Frameworks & Drivers」がアプリケーションのことを知っている、ということはありえません。
+
+以上のことを踏まえて、要点とクリーンアーキテクチャがどう対応しているのかを見てみると、以下のようになります。
+
+#### ドメイン層
+
+赤色の「Application Business Rules」と黄色の「Enterprise Business Rules」を合わせたものがドメイン層にあたります。
+
+また、依存関係は以下のようになっています。
+
+- **Application Business Rules** : Enterprise Business Rulesに依存する
+- **Enterprise Business Rules** : 何にも依存しない
+
+#### UI層
+
+緑色の「Interface Adapters」の一部がUI層にあたります。
+
+ドメイン層と○○との仲介をする、という役割別ではレイヤーが分かれていませんが、図の中にある要素でいうと、「Controllers」と「Presenters」がUI層にあたります。
+
+#### インフラ層
+
+緑色の「Interface Adapters」の一部がインフラ層にあたります。
+
+ドメイン層と○○との仲介をする、という役割別ではレイヤーが分かれていませんが、図の中にある要素でいうと、「Gateways」がインフラ層にあたります。
+
+## まとめ
+
+todo まとめ
+
+## おまけ：3つのアーキテクチャの正体
 
 ![](/images/clean-onion-hexagonal-same2.png)
 
