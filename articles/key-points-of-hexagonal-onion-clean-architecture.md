@@ -5,6 +5,16 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ヘキサゴナルアーキテクチャ, オニオンアーキテクチャ, クリーンアーキテクチャ]
 published: true
 ---
+:::message
+**お知らせ**
+
+アップデート版の記事を公開しました。以下のリンクからご確認ください。
+
+**[クリーンアーキテクチャとオニオンとヘキサゴナルの違い？残念だがそんなものは無い！](https://zenn.dev/kihirakota/articles/clean-onion-hexagonal-same)**
+:::
+
+## はじめに
+
 Hexagonal Architecture、Onion Architecture、Clean Architecture、これらのアーキテクチャーは基本的な考え方が共通しており、多少乱暴ですがどれも同じと言うことができますので、要点をまとめます。
 
 ## 各アーキテクチャーについて
